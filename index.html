@@ -315,10 +315,10 @@ body.menu-open{overflow:hidden}
   border-radius:3px;cursor:pointer;background:#111;box-shadow:var(--shadow-soft);
 }
 .gal-item img{
-  width:100%;filter:grayscale(1) contrast(1.02);
-  transition:filter .7s var(--ease),transform 1.1s var(--ease);
+  width:100%;
+  transition:transform 1.1s var(--ease);
 }
-.gal-item:hover img{filter:grayscale(0) contrast(1);transform:scale(1.05)}
+.gal-item:hover img{transform:scale(1.05)}
 .gal-item::after{
   content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));
   opacity:0;transition:opacity .5s;
@@ -634,6 +634,8 @@ form{display:grid;gap:18px}
       <div class="gal-filters" data-reveal class="d2" id="galFilters">
         <button class="active" data-filter="all">Alles</button>
         <button data-filter="troue">Troues</button>
+        <button data-filter="verjaarsdae">Verjaarsdae</button>
+        <button data-filter="kombuistee">Kombuistee</button>
         <button data-filter="tafel">Tafeldekking</button>
         <button data-filter="detail">Detail</button>
       </div>
@@ -815,6 +817,45 @@ addEventListener('scroll',()=>{
 /* ---------- Gallery data ---------- */
 /* tags loosely group the shots for the filter chips */
 const IMAGES=[
+  {f:'Images/verjaarsdae/verjaarsdae-01.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-02.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-03.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-04.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-05.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-06.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-07.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-08.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-09.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-10.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/kombuistee/kombuistee-01.jpg',t:['kombuistee'],c:'Kombuistee'},
+  {f:'Images/kombuistee/kombuistee-02.jpg',t:['kombuistee'],c:'Kombuistee'},
+  {f:'Images/kombuistee/kombuistee-03.jpg',t:['kombuistee'],c:'Kombuistee'},
+  {f:'Images/verjaarsdae/verjaarsdae-11.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-12.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-13.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-14.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-15.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-16.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/kombuistee/kombuistee-04.jpg',t:['kombuistee'],c:'Kombuistee'},
+  {f:'Images/kombuistee/kombuistee-05.jpg',t:['kombuistee'],c:'Kombuistee'},
+  {f:'Images/verjaarsdae/verjaarsdae-17.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-18.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-19.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-20.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-21.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-22.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/kombuistee/kombuistee-06.jpg',t:['kombuistee'],c:'Kombuistee'},
+  {f:'Images/kombuistee/kombuistee-07.jpg',t:['kombuistee'],c:'Kombuistee'},
+  {f:'Images/verjaarsdae/verjaarsdae-23.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-24.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-25.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-26.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-27.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-28.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-29.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-30.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-31.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
+  {f:'Images/verjaarsdae/verjaarsdae-32.jpg',t:['verjaarsdae'],c:'Verjaarsdag'},
   {f:'Images/IMG-20260716-WA0180.jpg',t:['troue'],c:'Troue'},
   {f:'Images/IMG-20260716-WA0181.jpg',t:['tafel'],c:'Tafeldekking'},
   {f:'Images/IMG-20260716-WA0182.jpg',t:['detail'],c:'Detail'},
